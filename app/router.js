@@ -4,6 +4,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('about');
+  this.resource('agents', function(){
+    this.route('show', {path: ':agent_id'});
+  });
 });
 
 export default Router;
