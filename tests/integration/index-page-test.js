@@ -13,6 +13,6 @@ module('Integration - Landing Page', {
 
 test('Should welcome me to rmforme', function() {
   visit('/').then(function() {
-    equal(find('h2#title').text(), 'Agents');
+    equal(find('h2#title').text(), 'rmforme');
   });
 });
