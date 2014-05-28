@@ -1,7 +1,4 @@
-// ember/tests/integration/agents-page-test.js
 import startApp from '../helpers/start-app';
-//import Pretender from '../../vendor/pretender/pretender';
-// import('vendor/pretender/pretender.js');
 var App, server;
 
 module('Integration - Agent Page', {
@@ -43,6 +40,28 @@ module('Integration - Agent Page', {
     Ember.run(App, 'destroy');
     server.shutdown();
   }
+});
+
+test('Should welcome me to rmforme', function() {
+  visit('/').then(function() {
+    equal(find('h2#title').text(), 'rmforme');
+  });
+});
+
+test('Should navigate to about page', function() {
+  visit('/').then(function() {
+    click("a:contains('About')").then(function() {
+      equal(find('h3').text(), 'About');
+    });
+  });
+});
+
+test('Should allow navigating back to root from another page', function() {
+  visit('/about').then(function() {
+    click('a:contains("Agents")').then(function() {
+      notEqual(find('h3').text(), 'About');
+    });
+  });
 });
 
 test('Should allow navigation to the agents page from the landing page', function() {
