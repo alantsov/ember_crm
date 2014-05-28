@@ -1,4 +1,6 @@
 <h4>{{name}}</h4>
+{{input type="text" id="new-agent" placeholder="quick note:"
+              value=message action="createNote"}}
 {{#each note in notes}}
   <p>{{note.message}}</p>
 {{/each}}
