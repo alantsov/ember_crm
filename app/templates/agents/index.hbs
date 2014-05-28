@@ -1,3 +1,7 @@
+<div>
+{{input type="text" id="new-agent" placeholder="new agent"
+              value=agentName action="createAgent"}}
+</div>
 {{#each}}
   {{link-to name 'agents.show' this}} {{events.firstObject.direction}} {{events.firstObject.action}} {{events.firstObject.humanDate}}
 <br/>
