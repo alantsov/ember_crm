@@ -1,5 +1,7 @@
 var AgentsIndexController = Ember.ArrayController.extend({
   agentName: "",
+  sortProperties: ['position'],
+  sortAscending: true,
   actions: {
     createAgent: function(){
       var record = this.store.createRecord('agent', {name: this.get('agentName')});
