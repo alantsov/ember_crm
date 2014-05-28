@@ -10,6 +10,7 @@ var app = new EmberApp({
 
 // Use this to add additional libraries to the generated output files.
 app.import('vendor/ember-data/ember-data.js');
+app.import('vendor/jquery-ujs/src/rails.js');
 
 app.import({development:'vendor/route-recognizer/dist/route-recognizer.js'});
 app.import({development:'vendor/FakeXMLHttpRequest/fake_xml_http_request.js'});
