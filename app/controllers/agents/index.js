@@ -5,6 +5,11 @@ var AgentsIndexController = Ember.ArrayController.extend({
       var record = this.store.createRecord('agent', {name: this.get('agentName')});
       record.save();
       this.set('agentName','');
+    },
+    removeEvent: function(e){
+      e.deleteRecord();
+      e.save();
+      return false;
     }
   }
 });
