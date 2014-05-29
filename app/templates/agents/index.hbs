@@ -3,13 +3,29 @@
 {{input type="text" id="new-agent" placeholder="new agent"
               value=agentName action="createAgent"}}
 </div>
-{{#each}}
-  {{link-to name 'agents.show' this}}
-  {{events.firstObject.direction}}
-  {{events.firstObject.action}}
-  {{events.firstObject.humanDate}}
-{{#if events.firstObject}}
-  <button {{action "removeEvent" events.firstObject}}>✓Done!</button>
-{{/if}}
-<br/>
-{{/each}}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Next Action</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+      <tr>
+        <td>{{link-to name 'agents.show' this}}</td>
+        <td>{{events.firstObject.direction}}</td>
+        <td>{{events.firstObject.action}}</td>
+        <td>{{events.firstObject.humanDate}}</td>
+        <td>
+          {{#if events.firstObject}}
+            <button {{action "removeEvent" events.firstObject}}>✓Done!</button>
+          {{/if}}
+        </td>
+      </tr>
+   {{/each}}
+  </tbody>
+</table>
