@@ -1,9 +1,16 @@
+<div class="form-group">
 {{view Ember.Select
        content=directions
        value=event.direction
+       classNames="form-control"
 }}
-{{#if event.direction}}
-  {{input type="text" value=event.action placeholder="action:"}}
-{{/if}}
-<button {{action 'saveEvent'}}>Save</button>
-<button {{action 'removeEvent'}}>X</button>
+</div>
+<div class="form-group">
+  {{#if event.direction}}
+    {{input classNames="form-control" type="text" value=event.action placeholder="action:"}}
+  {{/if}}
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" {{action 'saveEvent'}}>Save</button>
+  <button class="btn" {{action 'removeEvent'}}>X</button>
+</div
