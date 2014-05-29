@@ -1,5 +1,9 @@
 var EditEventComponent = Ember.Component.extend({
-  directions: ['', '>>', '<<', '><'],
+  directions: [
+     {value:'', label: 'Nothing to do'},
+     {value: '>>', label: 'I am going to do smth'},
+     {value: '<<', label: 'I wait for smth'},
+     {value: '><', label: 'We will meet'}],
   event: function(){
     var currentEvent = this.get("agent.events.firstObject");
     if(currentEvent == null){

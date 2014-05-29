@@ -1,6 +1,8 @@
 <div class="form-group">
 {{view Ember.Select
        content=directions
+       optionValuePath="content.value"
+       optionLabelPath="content.label"
        value=event.direction
        classNames="form-control"
 }}
