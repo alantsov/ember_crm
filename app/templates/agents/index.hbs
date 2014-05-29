@@ -22,7 +22,7 @@
         <td>{{events.firstObject.humanDate}}</td>
         <td>
           {{#if events.firstObject}}
-            <button {{action "removeEvent" events.firstObject}}>✓Done!</button>
+            <button class="btn btn-default btn-xs" {{action "removeEvent" events.firstObject}}>✓Done!</button>
           {{/if}}
         </td>
       </tr>
