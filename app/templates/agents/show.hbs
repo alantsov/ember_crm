@@ -1,8 +1,12 @@
 <h4>{{name}}</h4>
 <div class="row">
   <div class="col-xs-8">
-    {{textarea id="new-note" placeholder="quick note:" value=message}}
-    <button {{action 'createNote'}}>Create</button>
+    <div class="form-group">
+      {{textarea id="new-note" placeholder="quick note:" value=message classNames="form-control"}}
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" {{action 'createNote'}}>Save Note</button>
+    </div>
     {{#each note in notes}}
       <p>{{note.message}}</p>
     {{/each}}
