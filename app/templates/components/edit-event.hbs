@@ -1,1 +1,9 @@
-{{yield}}
+{{view Ember.Select
+       content=directions
+       value=event.direction
+}}
+{{#if event.direction}}
+  {{input type="text" value=event.action placeholder="action:"}}
+{{/if}}
+<button {{action 'saveEvent'}}>Save</button>
+<button {{action 'removeEvent'}}>X</button>
