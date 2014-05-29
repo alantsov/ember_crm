@@ -1,7 +1,13 @@
 <h4>{{name}}</h4>
-{{edit-event agent=model}}
-{{input type="text" id="new-agent" placeholder="quick note:"
-              value=message action="createNote"}}
-{{#each note in notes}}
-  <p>{{note.message}}</p>
-{{/each}}
+<div class="row">
+  <div class="col-xs-8">
+    {{textarea id="new-note" placeholder="quick note:" value=message}}
+    <button {{action 'createNote'}}>Create</button>
+    {{#each note in notes}}
+      <p>{{note.message}}</p>
+    {{/each}}
+  </div>
+  <div class="col-xs-4">
+    {{edit-event agent=model}}
+  </div>
+</div>
