@@ -10,4 +10,4 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, 'ember-crm');
 
-export default App;
+export default App; //test
